@@ -1,35 +1,40 @@
 import React from 'react';
 import './App.css';
+import ScoreField from './ScoreField';
+import ResetButton from './ResetButton';
+import DisplayWinner from './DisplayWinner';
 
-const App = ({ player1, player2, handleIncrementP1, handleIncrementP2, handleReset, whoIsServing, whoWins }) => (
+const App = ({ player1score, player2score, handleIncrementP1, handleIncrementP2, handleReset, serving, whoWins, history }) => (
     <React.Fragment>
-        {/* header */}
+
         <header className="page-header">
             <h1>PongPing</h1>
         </header>
 
-        {/* scores */}
-        <div className="row">
-            <div className="col-xs-6">
-                <p>Player 1 { !whoIsServing ? <span className="pull-right label label-success">Serving</span> : null} </p>
-                <p className="well">{ player1 }</p>
-                {!whoWins && <button onClick={ handleIncrementP1 } className="btn btn-primary">+</button>}
-            </div>
+        <ScoreField
+          player={ "Player 1" }
+          playerScore={ player1score }
+          handleIncrement={ handleIncrementP1 }
+          serving={ !serving ? <span className="pull-right label label-success">Serving</span> : null }
+          whoWins={ whoWins }
+        />
 
-            <div className="col-xs-6">
-                <p>Player 2 { whoIsServing ? <span className="pull-right label label-success">Serving</span> : null}</p>
-                <p className="well">{ player2 }</p>
-                {!whoWins && <button onClick={ handleIncrementP2 } className="btn btn-primary">+</button>}
-            </div>
-        </div>
+        <ScoreField
+          player={ "Player 2" }
+          playerScore={ player2score }
+          handleIncrement={ handleIncrementP2 }
+          serving={ serving ? <span className="pull-right label label-success">Serving</span> : null }
+          whoWins={ whoWins }
+        />
 
-        { /* winner message */}
-        <h2 className="jumbotron">{ whoWins === 0 ? "" : whoWins === 1 ? "Player One Wins" : "Player Two Wins" }</h2>
+        <DisplayWinner 
+          whoWins={ whoWins }
+        />
 
-        <hr />
-
-        { /* reset button */}
-        <button onClick={ handleReset } className="btn btn-danger">Reset</button>
+        <ResetButton
+          handleReset={ handleReset }
+        />
+        
     </React.Fragment>
 );
 
