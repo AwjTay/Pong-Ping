@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 
 const ResetButton = ({ handleReset }) => {
 
@@ -16,4 +16,3 @@ const ResetButton = ({ handleReset }) => {
 }
 
 export default ResetButton;
-
