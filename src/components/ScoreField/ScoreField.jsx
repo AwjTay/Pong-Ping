@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ScoreField = ( { playerScore, handleIncrement, serving, whoWins, player } ) => (
+const ScoreField = ( { playerScore, handleIncrement, serving, whoWins, playerName } ) => (
 
 	//use a combination of player prop (from App) and serving (from MapState) to write the serving logic in here
 
@@ -11,7 +11,7 @@ const ScoreField = ( { playerScore, handleIncrement, serving, whoWins, player } 
 		<div className="row">
             <div className="col-xs-6">
             	{ !serving ? <span className="pull-right label label-success">Serving</span> : null }
-                <p>{ player } { serving } </p>
+                <p>{ playerName } { serving } </p>
                 <p className="well">{ playerScore }</p>
                 {!whoWins && <button onClick={ handleIncrement } className="btn btn-primary">+</button>}
             </div>

@@ -4,6 +4,10 @@ const initial = {
     serving : false,
     whoWins : 0,
     gameHistory : [],
+    player1Name : "",
+    player2Name : "",
+    winningScore : 21,
+    serveInterval : 5,
 };
 
 export default initial;
