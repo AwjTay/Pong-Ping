@@ -3,11 +3,13 @@ const initial = {
     player2score: 0,
     serving : false,
     whoWins : 0,
-    gameHistory : [],
+    gameHistory : [{}, {}, {}],
     player1Name : "",
     player2Name : "",
     winningScore : 21,
     serveInterval : 5,
+    id : "",
+    loaded : false,
 };
 
 export default initial;

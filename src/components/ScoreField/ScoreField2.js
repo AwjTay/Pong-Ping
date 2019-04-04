@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ScoreField from "./ScoreField";
-import actions, { handleIncrementP2 } from "../../data/actions"
+import actions, { handleIncrementP2 } from "../../data/stateActions"
 
 const mapStateToProps = state => {
 	return {

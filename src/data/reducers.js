@@ -16,6 +16,8 @@ const updateHistory = state => {
 
 const submitSettings = (state, {type, ...settings}) => ({...state, ...settings}); 
 
+const loaded = (state, {type, ...loaded}) => ({...state, ...loaded});
+
 //one function that maps (not map maps) form values to the app
 
 const setScoreP1 = state => ({...state, player1score: state.player1score + 1});
@@ -38,7 +40,7 @@ const reducer = (state, action) => {
 		case "incrementP2" : return updateHistory(serviceOver20(winning2(setServer(setScoreP2(state)))));
 		case "reset" : return initial;
 		case "settings" : return submitSettings(state, action);
-
+		case "loaded" : return loaded(state, action);
 		default: return state;
 		//case save returns etc
 	}

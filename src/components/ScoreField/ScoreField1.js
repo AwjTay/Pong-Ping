@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ScoreField from "./ScoreField";
-import actions, { handleIncrementP1 } from "../../data/actions"
+import actions, { handleIncrementP1 } from "../../data/stateActions"
+import { updateGame } from "../../data/apiActions";
 
 const mapStateToProps = state => {
 	return {
@@ -13,6 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchtoProps = dispatch => {
 
+	//use patch action as dispath argument here and pass it the relevant player
+
 	return {
 		handleIncrement: () => dispatch(handleIncrementP1())
 	}
@@ -20,4 +23,3 @@ const mapDispatchtoProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchtoProps)(ScoreField);
 
-//work out serving - possibly by altering in Scorefield1 and Scorefield2

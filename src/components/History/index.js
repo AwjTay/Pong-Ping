@@ -4,8 +4,10 @@ import History from "./History";
 const mapStatetoProps = state => {
 
 	return {
-		History : state.History,
+		History : state.gameHistory,
 	}
 }
+
+console.log(History);
 
 export default connect(mapStatetoProps)(History);

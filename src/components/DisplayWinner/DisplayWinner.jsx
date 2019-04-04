@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const DisplayWinner = ({ whoWins }) => (
+const DisplayWinner = ({ whoWins, player1name, player2name }) => (
 
 	<React.Fragment>
 

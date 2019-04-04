@@ -11,7 +11,7 @@ const ScoreField = ( { playerScore, handleIncrement, serving, whoWins, playerNam
 		<div className="row">
             <div className="col-xs-6">
             	{ !serving ? <span className="pull-right label label-success">Serving</span> : null }
-                <p>{ playerName } { serving } </p>
+                <p>{ playerName.name } { serving } </p>
                 <p className="well">{ playerScore }</p>
                 {!whoWins && <button onClick={ handleIncrement } className="btn btn-primary">+</button>}
             </div>

@@ -5,13 +5,16 @@ import ResetButton from '../ResetButton/';
 import DisplayWinner from '../DisplayWinner/';
 import History from "../History/";
 import StartGame from "../StartGame/";
+import Loading from "../Loading/";
 
 const App = ({player1Name, winningScore, serveInterval}) => ( 
 
     
-    player1Name === "" ? <StartGame /> : 
+    player1Name === "" ? <StartGame />  : 
 
     <React.Fragment>
+
+      
 
         <header className="page-header">
             <h1>PongPing</h1>
@@ -33,7 +36,7 @@ const App = ({player1Name, winningScore, serveInterval}) => (
 
         <ResetButton />
 
-        <History />
+     
         
     </React.Fragment> 
 );

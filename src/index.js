@@ -9,6 +9,16 @@ import reducers from "./data/reducers";
 import initial from "./data/initial";
 
 
+const composeEnhancers =
+	window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+	
+const store = createStore(
+	reducers,
+	initial,
+	composeEnhancers(applyMiddleware(thunk))
+);
+
+
 
 ReactDOM.render(
 	<Provider store={ store }>
@@ -17,14 +27,6 @@ ReactDOM.render(
 document.getElementById("root"),
 );
 
-const composeEnhancers =
-	window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-	
-const store = createStore(
-	reducer,
-	initial,
-	composeEnhancers(applyMiddleware(thunk))
-);
 
 
 
